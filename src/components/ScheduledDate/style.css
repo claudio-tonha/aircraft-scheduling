@@ -1,0 +1,13 @@
+.date__navigation {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+.btn__navigate{
+    background: none;
+    border: none;
+    cursor: pointer;
+}

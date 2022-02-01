@@ -1,32 +1,64 @@
+* {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif
+}
+
 .App {
-  text-align: center;
+  text-align: center; 
+  margin-top: 50px; 
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.flights,
+.rotations,
+.aircrafts {
+  border: 1px solid #d7d7d7;
+  box-shadow: 9px 2px 11px 0px #edecec;
+  overflow-y: auto;
+  border-radius: 5px;
+  max-height: calc(100vh - 200px);
+  background: #F1F5FD;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.flights{
+  grid-area: flights;
 }
 
-.App-link {
-  color: #61dafb;
+.flights .title{
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 767px){
+  .rotations{
+    grid-column: auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.title{
+  background: #5F67EA;
+  color: white;
+  padding: 14px;
+  margin: 0;
+}
+
+.App .content{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr;
+  width: min(100% - 4rem, 70rem);
+  margin: 30px auto 0;
+  gap: 10px;
+  grid-template-areas:
+        'aircrafts rotations rotations flights';
+}
+
+@media (max-width: 767px){
+  .App .content{
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+        'aircrafts'
+        'rotations'
+        'flights';
   }
 }
